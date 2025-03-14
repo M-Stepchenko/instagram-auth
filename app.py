@@ -28,26 +28,118 @@ def index():
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <title>Авторизация Instagram</title>
         <style>
+            /* Основные стили */
             body {
-                font-family: Arial, sans-serif;
-                margin: 20px;
+                font-family: 'Arial', sans-serif;
+                margin: 0;
+                padding: 0;
+                background-color: #057DBC;
+                color: white;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                min-height: 100vh;
             }
+
             .container {
+                background: white;
+                padding: 2rem;
+                border-radius: 10px;
+                box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+                width: 100%;
                 max-width: 400px;
-                margin: 0 auto;
+                text-align: center;
             }
+
+            h1 {
+                color: #057DBC;
+                margin-bottom: 1.5rem;
+                font-size: 1.8rem;
+            }
+
             input, button {
                 width: 100%;
-                padding: 10px;
-                margin: 10px 0;
+                padding: 0.75rem;
+                margin: 0.5rem 0;
+                border: 1px solid #ccc;
+                border-radius: 5px;
+                font-size: 1rem;
             }
+
+            input:focus {
+                outline: none;
+                border-color: #057DBC;
+                box-shadow: 0 0 5px rgba(5, 125, 188, 0.5);
+            }
+
+            button {
+                background-color: #057DBC;
+                color: white;
+                border: none;
+                cursor: pointer;
+                transition: background-color 0.3s ease;
+            }
+
+            button:hover {
+                background-color: #045a8a;
+            }
+
             .output {
-                margin-top: 20px;
-                padding: 10px;
+                margin-top: 1.5rem;
+                padding: 1rem;
                 background: #f4f4f4;
                 border: 1px solid #ccc;
-                white-space: pre-wrap;
-                word-wrap: break-word;
+                border-radius: 5px;
+                color: #333;
+                text-align: left;
+                display: none;
+            }
+
+            textarea {
+                width: 100%;
+                padding: 0.75rem;
+                border: 1px solid #ccc;
+                border-radius: 5px;
+                font-size: 1rem;
+                resize: none;
+                margin-top: 0.5rem;
+            }
+
+            .copy-button {
+                background-color: #057DBC;
+                color: white;
+                border: none;
+                padding: 0.5rem 1rem;
+                border-radius: 5px;
+                cursor: pointer;
+                margin-top: 0.5rem;
+                transition: background-color 0.3s ease;
+            }
+
+            .copy-button:hover {
+                background-color: #045a8a;
+            }
+
+            /* Адаптивность для мобильных устройств */
+            @media (max-width: 480px) {
+                .container {
+                    padding: 1rem;
+                    margin: 1rem;
+                }
+
+                h1 {
+                    font-size: 1.5rem;
+                }
+
+                input, button {
+                    padding: 0.5rem;
+                    font-size: 0.9rem;
+                }
+
+                textarea {
+                    padding: 0.5rem;
+                    font-size: 0.9rem;
+                }
             }
         </style>
     </head>
@@ -59,10 +151,10 @@ def index():
                 <input type="password" id="password" placeholder="Пароль" required>
                 <button type="submit">Авторизоваться</button>
             </form>
-            <div id="output" class="output" style="display: none;">
-                <p>Скопируйте этот текст и отправьте его:</p>
+            <div id="output" class="output">
+                <p>Скопируйте этот текст и отправьте его сотруднику ebots:</p>
                 <textarea id="sessionText" rows="10" readonly></textarea>
-                <button onclick="copyToClipboard()">Скопировать в буфер обмена</button>
+                <button class="copy-button" onclick="copyToClipboard()">Скопировать в буфер обмена</button>
             </div>
         </div>
 
