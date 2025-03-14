@@ -153,7 +153,7 @@ def index():
                 <button type="submit">Авторизоваться</button>
             </form>
             <div id="output" class="output">
-                <p>Скопируйте этот текст и отправьте его:</p>
+                <p>Скопируйте этот текст и отправьте его сотруднику ebots:</p>
                 <textarea id="sessionText" rows="10" readonly></textarea>
                 <button class="copy-button" onclick="copyToClipboard()">Скопировать в буфер обмена</button>
             </div>
