@@ -46,9 +46,10 @@ def index():
                 padding: 2rem;
                 border-radius: 10px;
                 box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
-                width: 100%;
+                width: 90%;
                 max-width: 400px;
                 text-align: center;
+                margin: 1rem;
             }
 
             h1 {
@@ -58,7 +59,7 @@ def index():
             }
 
             input, button {
-                width: 100%;
+                width: calc(100% - 2rem); /* Учитываем отступы */
                 padding: 0.75rem;
                 margin: 0.5rem 0;
                 border: 1px solid #ccc;
@@ -96,7 +97,7 @@ def index():
             }
 
             textarea {
-                width: 100%;
+                width: calc(100% - 2rem); /* Учитываем отступы */
                 padding: 0.75rem;
                 border: 1px solid #ccc;
                 border-radius: 5px;
@@ -152,7 +153,7 @@ def index():
                 <button type="submit">Авторизоваться</button>
             </form>
             <div id="output" class="output">
-                <p>Скопируйте этот текст и отправьте его сотруднику ebots:</p>
+                <p>Скопируйте этот текст и отправьте его:</p>
                 <textarea id="sessionText" rows="10" readonly></textarea>
                 <button class="copy-button" onclick="copyToClipboard()">Скопировать в буфер обмена</button>
             </div>
